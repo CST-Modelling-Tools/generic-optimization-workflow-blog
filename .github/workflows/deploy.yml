@@ -44,6 +44,11 @@ jobs:
             git push origin HEAD:refs/heads/gh-pages
           fi
 
+      - name: Configure git user
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
       - name: Deploy to gh-pages
         env:
           GIT_USER: github-actions[bot]
