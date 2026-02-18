@@ -1,41 +1,55 @@
-# Website
+﻿# Generic Optimization Workflow (GOW) Development Blog
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This repository contains the **Generic Optimization Workflow (GOW) Development Blog**, built with [Docusaurus](https://docusaurus.io/).
 
-## Installation
+## Install dependencies
+
+Using Yarn:
 
 ```bash
-yarn
+yarn install
 ```
 
-## Local Development
+Using npm:
+
+```bash
+npm install
+```
+
+## Run locally
+
+Using Yarn:
 
 ```bash
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+Using npm:
+
+```bash
+npm run start
+```
 
 ## Build
+
+Using Yarn:
 
 ```bash
 yarn build
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
-
-## Deployment
-
-Using SSH:
+Using npm:
 
 ```bash
-USE_SSH=true yarn deploy
+npm run build
 ```
 
-Not using SSH:
+## Deploy to GitHub Pages
+
+Using Yarn:
 
 ```bash
-GIT_USER=<Your GitHub username> yarn deploy
+yarn deploy
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+If needed, set `GIT_USER=<your-github-username>` before running the deploy command.

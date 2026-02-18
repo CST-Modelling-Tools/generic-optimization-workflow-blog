@@ -1,5 +1,5 @@
-/**
- * Global custom CSS for the Tonatiuh++ Development Blog
+﻿/**
+ * Global custom CSS for the GOW Development Blog
  * -----------------------------------------------------
  * - Brand fonts / colors
  * - Heading + body typography
@@ -16,12 +16,12 @@
 
 /* Light theme tokens */
 :root {
-  /* Brand colors (from Tonatiuh++ logo) */
-  --tonatiuh-red: #C62828;
-  --tonatiuh-dark: #424A54;
+  /* Brand colors (from GOW branding) */
+  --gow-red: #C62828;
+  --gow-dark: #424A54;
 
   /* Primary color used by Infima (buttons, links, etc.) */
-  --ifm-color-primary: var(--tonatiuh-dark);
+  --ifm-color-primary: var(--gow-dark);
   --ifm-color-primary-dark: #363d45;
   --ifm-color-primary-darker: #303740;
   --ifm-color-primary-darkest: #252a30;
@@ -64,13 +64,13 @@ h1,
 .hero__title {
   font-size: 2.2rem !important;
   font-weight: 600 !important;
-  color: var(--tonatiuh-dark) !important;
+  color: var(--gow-dark) !important;
 }
 
 /* Section titles (non-markdown generic) */
 h2 {
   font-weight: 500 !important;
-  color: var(--tonatiuh-dark) !important;
+  color: var(--gow-dark) !important;
 }
 
 /* Slightly more relaxed line-height for body text */
@@ -83,7 +83,7 @@ p {
 .markdown h2 {
   font-size: 1.45rem !important;
   font-weight: 600 !important;
-  color: var(--tonatiuh-dark) !important;
+  color: var(--gow-dark) !important;
   margin-top: 1.6rem !important;
   margin-bottom: 0.6rem !important;
 }
@@ -91,7 +91,7 @@ p {
 .markdown h3 {
   font-size: 1.2rem !important;
   font-weight: 550 !important;
-  color: var(--tonatiuh-dark) !important;
+  color: var(--gow-dark) !important;
   margin-top: 1.3rem !important;
   margin-bottom: 0.5rem !important;
 }
@@ -170,7 +170,7 @@ p {
 .theme-doc-markdown .badge,
 .badge {
   background-color: #e9ecef !important;
-  color: var(--tonatiuh-dark) !important;
+  color: var(--gow-dark) !important;
   border-radius: 4px !important;
   font-weight: 500 !important;
 }
@@ -237,7 +237,7 @@ main .markdown > h1:first-child {
 .blogPostMeta .avatar__name {
   font-size: 1.05rem !important;
   font-weight: 600 !important;
-  color: var(--tonatiuh-dark) !important;
+  color: var(--gow-dark) !important;
 }
 
 .blogPostMeta .avatar__subtitle {
@@ -261,7 +261,7 @@ main .markdown > h1:first-child {
   font-size: 1.25rem !important;
   font-weight: 600 !important;
   line-height: 1.3 !important;
-  color: var(--tonatiuh-dark) !important;
+  color: var(--gow-dark) !important;
   text-decoration: none !important;
 }
 
@@ -289,7 +289,7 @@ article h2 a {
 /* ------------------------------------------- */
 
 .markdown a {
-  color: var(--tonatiuh-red) !important;
+  color: var(--gow-red) !important;
   text-decoration: underline;
   text-decoration-thickness: 0.09em;
   text-underline-offset: 0.15em;
@@ -363,7 +363,7 @@ article h2 a {
 }
 
 /* -------------------------------------------------- */
-/* 9) Custom Prism token colors (VS Code–like)        */
+/* 9) Custom Prism token colors (VS Code-like)        */
 /* -------------------------------------------------- */
 
 /* Plain text (most of your shell commands) */
@@ -411,4 +411,5 @@ article h2 a {
 .token.number {
   color: #b5cea8 !important;
 }
+
 

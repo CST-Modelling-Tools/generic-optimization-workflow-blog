@@ -1,4 +1,4 @@
-// @ts-check
+﻿// @ts-check
 // `@type` JSDoc annotations allow editor autocompletion and type checking
 // (when paired with `@ts-check`).
 // There are various equivalent ways to declare your Docusaurus config.
@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Tonatiuh++ Development Blog',
-  tagline: 'Advancing solar ray tracing for concentrating solar systems',
+  title: 'Generic Optimization Workflow (GOW) Development Blog',
+  tagline: 'Development notes, releases, and architecture decisions',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -26,11 +26,6 @@ const config = {
   organizationName: 'CST-Modelling-Tools',
   projectName: 'generic-optimization-workflow-blog',
   deploymentBranch: 'gh-pages',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'CST-Modelling-Tools', // Usually your GitHub org/user name.
-  projectName: 'tonatiuhxx-blog', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -61,36 +56,34 @@ const config = {
         blog: {
           routeBasePath: '/', // Make blog the homepage
           showReadingTime: true,
-          blogTitle: 'Tonatiuh++ Development Blog - Solar Ray Tracing Research',
+          blogTitle: 'Generic Optimization Workflow (GOW) Development Blog',
           blogDescription:
-            'Latest developments in Tonatiuh++, an advanced solar ray tracing software for analyzing concentrating solar power systems. Research updates, algorithms, and CST modeling insights.',
+            'Development updates for the Generic Optimization Workflow (GOW): releases, roadmap updates, and architecture decisions.',
           postsPerPage: 10,
           blogSidebarTitle: 'Recent Posts',
           blogSidebarCount: 'ALL',
           feedOptions: {
             type: 'all',
-            title: 'Tonatiuh++ Development Blog',
+            title: 'Generic Optimization Workflow (GOW) Development Blog',
             description:
-              'Latest developments in solar ray tracing and CST optimization research',
-            copyright: `Copyright © ${new Date().getFullYear()} TonatiuhXX Development`,
+              'Development updates for the Generic Optimization Workflow (GOW).',
+            copyright: `Copyright © ${new Date().getFullYear()} Generic Optimization Workflow (GOW) Project`,
             language: 'en',
           },
         },
-        docs: false, // Disable docs section for now,
+        docs: false,
         theme: {
           customCss: './src/css/custom.css',
         },
         sitemap: {
           changefreq: 'weekly',
           priority: 0.5,
-          ignorePatterns: ['/tags/**'], // This excludes tag pages, which is fine
+          ignorePatterns: ['/tags/**'],
           filename: 'sitemap.xml',
-          // Add custom priority for different page types
           createSitemapItems: async (params) => {
             const {defaultCreateSitemapItems, ...rest} = params;
             const items = await defaultCreateSitemapItems(rest);
             return items.map((item) => {
-              // Give blog posts higher priority
               if (
                 item.url.includes('/welcome') ||
                 (!item.url.includes('/tags') &&
@@ -99,7 +92,6 @@ const config = {
               ) {
                 return {...item, priority: 0.7, changefreq: 'daily'};
               }
-              // Homepage gets highest priority
               if (item.url === rest.siteConfig.url + rest.siteConfig.baseUrl) {
                 return {...item, priority: 1.0, changefreq: 'daily'};
               }
@@ -114,38 +106,38 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // SEO metadata
       metadata: [
         {
           name: 'keywords',
           content:
-            'solar energy, ray tracing, CST, concentrating solar power, Tonatiuh, optical simulation, renewable energy, solar research',
+            'generic optimization workflow, GOW, optimization workflow, software development, releases, roadmap, architecture',
         },
         {name: 'author', content: 'Manuel Blanco'},
         {
           name: 'description',
           content:
-            'Development blog for Tonatiuh++, advanced solar ray tracing software for concentrating solar power systems',
+            'Development blog for Generic Optimization Workflow (GOW), including releases, roadmap updates, and architecture decisions.',
         },
         {property: 'og:type', content: 'website'},
-        {property: 'og:site_name', content: 'Tonatiuh++ Development Blog'},
+        {
+          property: 'og:site_name',
+          content: 'Generic Optimization Workflow (GOW) Development Blog',
+        },
         {name: 'twitter:card', content: 'summary_large_image'},
       ],
 
-      // Replace with your project's social card
-      image: 'img/tonatiuhxx-social-card.jpg',
+      image: 'img/docusaurus-social-card.jpg',
       colorMode: {
         respectPrefersColorScheme: true,
       },
 
       navbar: {
-        title: 'Tonatiuh++ Development Blog',
+        title: 'GOW Development Blog',
         logo: {
-          alt: 'Tonatiuh++ Solar Ray Tracing Software Logo',
-          src: 'img/tonatiuhxx-icon.png',
+          alt: 'Generic Optimization Workflow (GOW) logo',
+          src: 'img/logo.svg',
         },
         items: [
-          // Funding block: logically "left", visually centered with CSS
           {
             type: 'html',
             position: 'left',
@@ -162,10 +154,8 @@ const config = {
               </div>
             `,
           },
-
-          // GitHub link on the right
           {
-            href: 'https://github.com/CST-Modelling-Tools/TonatiuhXX',
+            href: 'https://github.com/CST-Modelling-Tools/generic-optimization-workflow-blog',
             label: 'GitHub',
             position: 'right',
           },
@@ -188,12 +178,12 @@ const config = {
             title: 'Resources',
             items: [
               {
-                label: 'TonatiuhXX Repository',
-                href: 'https://github.com/CST-Modelling-Tools/TonatiuhXX',
+                label: 'GOW Blog Repository',
+                href: 'https://github.com/CST-Modelling-Tools/generic-optimization-workflow-blog',
               },
               {
-                label: 'Original Tonatiuh',
-                href: 'https://github.com/iat-cener/tonatiuh',
+                label: 'GOW Main Repository',
+                href: 'https://github.com/CST-Modelling-Tools/generic-optimization-workflow',
               },
             ],
           },
@@ -202,12 +192,10 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/CST-Modelling-Tools/tonatiuhxx-blog',
+                href: 'https://github.com/CST-Modelling-Tools/generic-optimization-workflow-blog',
               },
             ],
           },
-
-          // Funding section in the footer
           {
             title: 'Funding',
             items: [
@@ -215,12 +203,11 @@ const config = {
                 html: `
                   <div class="funding-block">
                     <p class="funding-text">
-                      The <strong>Tonatiuh++ Development Blog</strong> is part of the project:
-                      <em>"Towards disruptive innovation in advanced solar energy systems through artificial intelligence and high performance computing."</em>
+                      The <strong>GOW Development Blog</strong> supports transparent and reproducible optimization workflow development.
                     </p>
                     <p>
                       Grant ATR2024-155003 funded by:<br/>
-                      <img class="funding-logo" src="/tonatiuhpp-blog/img/MICIU_AEI.jpg" alt="MICIU + AEI logo" />
+                      <img class="funding-logo" src="/generic-optimization-workflow-blog/img/MICIU_AEI.jpg" alt="MICIU + AEI logo" />
                     </p>
                   </div>
                 `,
@@ -229,9 +216,9 @@ const config = {
           },
         ],
 
-        copyright: `Copyright © ${new Date().getFullYear()} Tonatiuh++ Project. Free and Open Source Software. 
-        Documentation licensed under 
-        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. 
+        copyright: `Copyright © ${new Date().getFullYear()} Generic Optimization Workflow (GOW) Project. Free and Open Source Software.
+        Documentation licensed under
+        <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.
         Built with Docusaurus.`,
       },
 

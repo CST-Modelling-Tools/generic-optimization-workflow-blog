@@ -1,7 +1,13 @@
-mblanco:
+﻿mblanco:
   name: Manuel Blanco
-  title: Tonatiuh++ Developer & CST Researcher
+  title: GOW Developer & Researcher
   url: https://github.com/mblancomuriel
   image_url: https://github.com/mblancomuriel.png
   socials:
     github: CST-Modelling-Tools
+
+gow-team:
+  name: GOW Development Team
+  title: Generic Optimization Workflow Core Team
+  url: https://github.com/CST-Modelling-Tools
+  image_url: https://github.com/CST-Modelling-Tools.png
