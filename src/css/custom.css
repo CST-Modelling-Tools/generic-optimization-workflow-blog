@@ -1,0 +1,414 @@
+/**
+ * Global custom CSS for the Tonatiuh++ Development Blog
+ * -----------------------------------------------------
+ * - Brand fonts / colors
+ * - Heading + body typography
+ * - Navbar funding block
+ * - Footer + tags styling
+ */
+
+/* ----------------------------- */
+/* 1) Fonts + base theme tokens  */
+/* ----------------------------- */
+
+/* Modern, readable font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+/* Light theme tokens */
+:root {
+  /* Brand colors (from Tonatiuh++ logo) */
+  --tonatiuh-red: #C62828;
+  --tonatiuh-dark: #424A54;
+
+  /* Primary color used by Infima (buttons, links, etc.) */
+  --ifm-color-primary: var(--tonatiuh-dark);
+  --ifm-color-primary-dark: #363d45;
+  --ifm-color-primary-darker: #303740;
+  --ifm-color-primary-darkest: #252a30;
+  --ifm-color-primary-light: #5a6470;
+  --ifm-color-primary-lighter: #6b7683;
+  --ifm-color-primary-lightest: #8791a0;
+
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.08);
+
+  /* Use Inter everywhere */
+  --ifm-font-family-base: 'Inter', system-ui, -apple-system, BlinkMacSystemFont,
+    'Segoe UI', sans-serif;
+  --ifm-font-family-monospace: 'Menlo', monospace;
+}
+
+/* Dark mode palette tuned to stay readable */
+[data-theme='dark'] {
+  --ifm-color-primary: #50c2b5;
+  --ifm-color-primary-dark: #3da99d;
+  --ifm-color-primary-darker: #34958b;
+  --ifm-color-primary-darkest: #29736b;
+  --ifm-color-primary-light: #68d0c3;
+  --ifm-color-primary-lighter: #7fd9cd;
+  --ifm-color-primary-lightest: #a3e5dd;
+  --docusaurus-highlighted-code-line-bg: rgba(255, 255, 255, 0.06);
+}
+
+/* Subtle light-gray background for the whole page */
+html body {
+  background-color: #fafafa;
+}
+
+/* -------------------------------- */
+/* 2) Typography / headings / body  */
+/* -------------------------------- */
+
+/* Main blog titles and hero-like headings */
+h1,
+.hero__title {
+  font-size: 2.2rem !important;
+  font-weight: 600 !important;
+  color: var(--tonatiuh-dark) !important;
+}
+
+/* Section titles (non-markdown generic) */
+h2 {
+  font-weight: 500 !important;
+  color: var(--tonatiuh-dark) !important;
+}
+
+/* Slightly more relaxed line-height for body text */
+.markdown p,
+p {
+  line-height: 1.6;
+}
+
+/* Fix heading hierarchy inside blog post markdown content */
+.markdown h2 {
+  font-size: 1.45rem !important;
+  font-weight: 600 !important;
+  color: var(--tonatiuh-dark) !important;
+  margin-top: 1.6rem !important;
+  margin-bottom: 0.6rem !important;
+}
+
+.markdown h3 {
+  font-size: 1.2rem !important;
+  font-weight: 550 !important;
+  color: var(--tonatiuh-dark) !important;
+  margin-top: 1.3rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+/* ------------------------ */
+/* 3) Navbar + site header  */
+/* ------------------------ */
+
+/* Slight spacing between logo icon and title */
+.navbar__title {
+  margin-left: 0.3rem;
+}
+
+/* Allow absolute centering of the funding block */
+.navbar__inner {
+  position: relative;
+}
+
+/* Funding block centered horizontally + vertically */
+.navbar-funding-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: row;        /* text and logo on the same line */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.navbar-funding-center-text {
+  font-size: 0.9rem;
+  line-height: 1.1;
+  opacity: 0.95;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.navbar-funding-center-logo {
+  height: 34px;
+  object-fit: contain;
+}
+
+/* Hide funding center block on very small screens if space is tight */
+@media (max-width: 700px) {
+  .navbar-funding-center {
+    display: none;
+  }
+}
+
+/* --------------------------------- */
+/* 4) Funding blocks (footer, etc.)  */
+/* --------------------------------- */
+
+.funding-block {
+  max-width: 350px;
+}
+
+.funding-logos {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 0.4rem;
+}
+
+.funding-logos img {
+  height: 100px;
+  object-fit: contain;
+}
+
+/* ------------------------- */
+/* 5) Tags / badges styling  */
+/* ------------------------- */
+
+.theme-doc-markdown .badge,
+.badge {
+  background-color: #e9ecef !important;
+  color: var(--tonatiuh-dark) !important;
+  border-radius: 4px !important;
+  font-weight: 500 !important;
+}
+
+/* ---------------- */
+/* 6) Footer theme  */
+/* ---------------- */
+
+.footer {
+  background-color: #2e2e2e !important; /* slightly softer than pure black */
+  color: #ffffff !important;
+}
+
+.footer__title {
+  font-size: 1rem;
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+.footer__item a {
+  color: #c6c6c6 !important;
+}
+
+.footer__item a:hover {
+  color: #ffffff !important;
+}
+
+/* Make the copyright line a bit less cramped */
+.footer__bottom {
+  font-size: 0.85rem;
+}
+
+/* ---------------- */
+/* 7) Misc helpers  */
+/* ---------------- */
+
+/* Reduce top margin of the first blog post title on the homepage */
+main .markdown > h1:first-child {
+  margin-top: 0.5rem;
+}
+
+/* --------------------------------------------------------- */
+/* Improved Author Card Styling                              */
+/* --------------------------------------------------------- */
+
+.blogPostMeta {
+  margin-top: 1.5rem !important;
+  padding: 1rem 1.2rem !important;
+  border-radius: 10px;
+  background-color: #ffffff !important;
+  border: 1px solid #e3e3e3;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.blogPostMeta .avatar__photo {
+  width: 56px !important;
+  height: 56px !important;
+  border-radius: 50% !important;
+  border: 2px solid #ddd;
+}
+
+.blogPostMeta .avatar__name {
+  font-size: 1.05rem !important;
+  font-weight: 600 !important;
+  color: var(--tonatiuh-dark) !important;
+}
+
+.blogPostMeta .avatar__subtitle {
+  font-size: 0.9rem !important;
+  color: #666 !important;
+  margin-top: 0.1rem;
+}
+
+.blogPostMeta .avatar__link svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* ----------------------------------------------------------- */
+/* Force smaller blog list titles everywhere (homepage, tags)  */
+/* ----------------------------------------------------------- */
+
+.blog-post-title,
+.blog-post-title a,
+.blog-post-title a:hover {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  color: var(--tonatiuh-dark) !important;
+  text-decoration: none !important;
+}
+
+.blog-list-page h2,
+.blog-list-page h2 a {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+
+article h2,
+article h2 a {
+  font-size: 1.25rem !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+}
+
+.blog-post-title {
+  margin-top: 0.4rem !important;
+  margin-bottom: 0.3rem !important;
+}
+
+/* ------------------------------------------- */
+/* Make links in markdown clearly visible      */
+/* ------------------------------------------- */
+
+.markdown a {
+  color: var(--tonatiuh-red) !important;
+  text-decoration: underline;
+  text-decoration-thickness: 0.09em;
+  text-underline-offset: 0.15em;
+  font-weight: 500;
+}
+
+.markdown a:hover {
+  color: #e53935 !important;
+}
+
+/* -------------------------------------------- */
+/* Automatic Image Slideshow (no JS required)   */
+/* -------------------------------------------- */
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  margin: 1.5rem auto;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.slideshow img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 0;
+  animation: slideShow 12s infinite;
+}
+
+/* Image timing: 3 images, 12-second full cycle */
+.slideshow img:nth-child(1) {
+  animation-delay: 0s;
+}
+.slideshow img:nth-child(2) {
+  animation-delay: 4s;
+}
+.slideshow img:nth-child(3) {
+  animation-delay: 8s;
+}
+
+@keyframes slideShow {
+  0%   { opacity: 0; }
+  10%  { opacity: 1; }
+  30%  { opacity: 1; }
+  40%  { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+/* -------------------------------------------------- */
+/* 8) Dark terminal-like styling for all code blocks  */
+/* -------------------------------------------------- */
+
+/* Make the outer container and pre/code dark */
+.theme-code-block,
+.theme-code-block pre,
+.theme-code-block code {
+  background-color: #000 !important; /* black background */
+  color: #e6e6e6 !important;         /* base light text */
+  border-radius: 8px;
+  padding: 0.75rem;
+}
+
+/* Ensure the inner Prism pre inherits correctly */
+.prism-code {
+  background-color: transparent !important;
+}
+
+/* -------------------------------------------------- */
+/* 9) Custom Prism token colors (VS Code–like)        */
+/* -------------------------------------------------- */
+
+/* Plain text (most of your shell commands) */
+.token.plain {
+  color: #e6e6e6 !important;
+}
+
+/* Comments */
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #7c7c7c !important;
+  font-style: italic;
+}
+
+/* Keywords (if, for, return, etc.) */
+.token.keyword {
+  color: #4ec9b0 !important;  /* teal/cyan */
+}
+
+/* Strings */
+.token.string {
+  color: #dcdcaa !important;  /* warm yellow */
+}
+
+/* Function names */
+.token.function {
+  color: #c586c0 !important;  /* purple */
+}
+
+/* Operators and punctuation */
+.token.operator,
+.token.punctuation {
+  color: #e6e6e6 !important;
+}
+
+/* Built-in commands and constants (e.g., git, cmake, python) */
+.token.builtin,
+.token.constant {
+  color: #9cdcfe !important;  /* soft blue */
+}
+
+/* Numbers */
+.token.number {
+  color: #b5cea8 !important;
+}
+

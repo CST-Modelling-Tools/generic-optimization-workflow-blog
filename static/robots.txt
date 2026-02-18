@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://CST-Modelling-Tools.github.io/tonatiuhxx-blog/sitemap.xml

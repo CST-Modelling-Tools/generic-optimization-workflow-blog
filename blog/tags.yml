@@ -1,0 +1,74 @@
+tonatiuh:
+  label: 'Tonatiuh'
+  description: 'Posts about Tonatiuh++ software development'
+  permalink: '/tonatiuh'
+
+solar-energy:
+  label: 'Solar Energy'
+  description: 'Solar energy research and developments'
+  permalink: '/solar-energy'
+
+ray-tracing:
+  label: 'Ray Tracing'
+  description: 'Ray tracing algorithms and techniques'
+  permalink: '/ray-tracing'
+
+cst:
+  label: 'CST'
+  description: 'Concentrating Solar Thermal systems'
+  permalink: '/cst'
+
+csp:
+  label: 'CSP'
+  description: 'Concentrating Solar Power'
+  permalink: '/csp'
+
+welcome:
+  label: 'Welcome'
+  description: 'Welcome and introductory posts'
+  permalink: '/welcome'
+
+status:
+  label: 'Status'
+  description: 'Status updates and project progress for Tonatiuh++.'
+  permalink: '/status'
+
+roadmap:
+  label: 'Roadmap'
+  permalink: '/roadmap'
+  description: 'Planned features and future development directions.'
+
+development:
+  label: 'Development'
+  permalink: '/development'
+  description: 'Technical notes and development updates for Tonatiuh++.'
+
+build:
+  label: Build
+  permalink: /build
+  description: Posts about building Tonatiuh++ from source on different platforms.
+
+overview:
+  label: Overview
+  permalink: /overview
+  description: High-level guides and conceptual overviews related to Tonatiuh++.
+
+windows:
+  label: Windows
+  permalink: /windows
+  description: Posts about building and running Tonatiuh++ on Windows.
+
+linux:
+  label: Linux
+  permalink: /linux
+  description: Posts about building and running Tonatiuh++ on Linux.
+
+ubuntu:
+  label: Ubuntu
+  permalink: /ubuntu
+  description: Posts specifically targeting Ubuntu-based setups.
+
+macos:
+  label: macOS
+  permalink: /macos
+  description: Posts about building and running Tonatiuh++ on macOS.
