@@ -102,7 +102,6 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -112,21 +111,22 @@ const config = {
           content:
             'generic optimization workflow, GOW, optimization workflow, software development, releases, roadmap, architecture',
         },
-        {name: 'author', content: 'Manuel Blanco'},
+        { name: 'author', content: 'Manuel Blanco' },
         {
           name: 'description',
           content:
             'Development blog for Generic Optimization Workflow (GOW), including releases, roadmap updates, and architecture decisions.',
         },
-        {property: 'og:type', content: 'website'},
+        { property: 'og:type', content: 'website' },
         {
           property: 'og:site_name',
           content: 'Generic Optimization Workflow (GOW) Development Blog',
         },
-        {name: 'twitter:card', content: 'summary_large_image'},
+        { name: 'twitter:card', content: 'summary_large_image' },
       ],
 
       image: 'img/docusaurus-social-card.jpg',
+
       colorMode: {
         respectPrefersColorScheme: true,
       },
@@ -147,7 +147,7 @@ const config = {
                   Grant ATR2024-155003 funded by:
                 </span>
                 <img
-                  src="img/MICIU_AEI.jpg"
+                  src="/generic-optimization-workflow-blog/img/MICIU_AEI.jpg"
                   alt="MICIU &amp; AEI logo"
                   class="navbar-funding-center-logo"
                 />
@@ -168,10 +168,7 @@ const config = {
           {
             title: 'Development',
             items: [
-              {
-                label: 'Blog',
-                to: '/',
-              },
+              { label: 'Blog', to: '/' },
             ],
           },
           {
@@ -207,7 +204,11 @@ const config = {
                     </p>
                     <p>
                       Grant ATR2024-155003 funded by:<br/>
-                      <img class="funding-logo" src="/generic-optimization-workflow-blog/img/MICIU_AEI.jpg" alt="MICIU + AEI logo" />
+                      <img
+                        class="funding-logo"
+                        src="/generic-optimization-workflow-blog/img/MICIU_AEI.jpg"
+                        alt="MICIU + AEI logo"
+                      />
                     </p>
                   </div>
                 `,
@@ -220,6 +221,22 @@ const config = {
         Documentation licensed under
         <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>.
         Built with Docusaurus.`,
+      },
+
+      // ✅ Giscus (comments)
+      // Requires: GitHub Discussions enabled + Giscus app installed for this repo
+      giscus: {
+        repo: 'CST-Modelling-Tools/generic-optimization-workflow-blog',
+        repoId: 'R_kgDORTKtXw',
+        category: 'General',
+        categoryId: 'DIC_kwDORTKtX84C2t_a',
+        mapping: 'pathname',
+        strict: '0',
+        reactionsEnabled: '1',
+        emitMetadata: '0',
+        inputPosition: 'bottom',
+        theme: 'preferred_color_scheme',
+        lang: 'en',
       },
 
       prism: {
