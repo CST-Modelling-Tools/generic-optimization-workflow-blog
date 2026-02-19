@@ -135,7 +135,7 @@ const config = {
         title: 'GOW Development Blog',
         logo: {
           alt: 'Generic Optimization Workflow (GOW) logo',
-          src: 'img/logo.svg',
+          src: 'img/gow-icon.png',
         },
         items: [
           {

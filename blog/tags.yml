@@ -1,39 +1,23 @@
-﻿gow:
-  label: GOW
-  permalink: /gow
-  description: Posts related to Generic Optimization Workflow.
+﻿welcome:
+  label: Welcome
+  description: Introductory posts and orientation.
 
-workflow:
-  label: Workflow
-  permalink: /workflow
-  description: Workflow design and execution updates.
+workflows:
+  label: Workflows
+  description: Workflow modeling, orchestration, and execution patterns.
+
+metaheuristics:
+  label: Metaheuristics
+  description: Population-based and stochastic optimization methods (GA, PSO, DE, etc.).
+
+hpc:
+  label: HPC
+  description: High-performance and high-throughput execution, scaling, and infrastructure.
+
+gow:
+  label: GOW
+  description: Generic Optimization Workflow project posts.
 
 optimization:
   label: Optimization
-  permalink: /optimization
-  description: Optimization methods and implementation notes.
-
-development:
-  label: Development
-  permalink: /development
-  description: Day-to-day engineering and technical decisions.
-
-roadmap:
-  label: Roadmap
-  permalink: /roadmap
-  description: Planned milestones and project direction.
-
-planning:
-  label: Planning
-  permalink: /planning
-  description: Prioritization and delivery planning notes.
-
-releases:
-  label: Releases
-  permalink: /releases
-  description: Release announcements and release process updates.
-
-versioning:
-  label: Versioning
-  permalink: /versioning
-  description: Version management and compatibility notes.
+  description: Objective-driven search, tuning, benchmarking, and evaluation.

@@ -1,34 +1,26 @@
 ﻿---
-slug: welcome-to-gow-blog
-title: Welcome to the GOW Development Blog
-authors: [gow-team]
-tags: [gow, workflow, optimization, development]
+slug: welcome
+title: Welcome to the Generic Optimization Workflow Development Blog
+authors: mblanco
+tags: [welcome, gow, optimization, workflows, metaheuristics, hpc]
+description: Introduction to the Generic Optimization Workflow (GOW) Development Blog - documenting advances in workflow-driven optimization and scalable evaluation
+keywords: [generic optimization workflow, GOW, optimization workflows, metaheuristics, HPC, distributed evaluation]
 ---
 
-Welcome to the development blog for the Generic Optimization Workflow (GOW) project.
+![GOW logo](/img/gow-logo.png)
 
-This blog is the public engineering log for GOW. It documents what we are building, why we are making specific design choices, and how the platform is evolving.
+# Welcome to the Generic Optimization Workflow Development Blog
 
-<!-- truncate -->
+This blog documents the ongoing development and evolution of Generic Optimization Workflow (GOW), a flexible framework for designing, executing, and scaling optimization workflows.
 
-## Introduction to GOW
+<!--truncate-->
 
-Generic Optimization Workflow (GOW) is focused on building a practical and extensible framework for defining, running, and improving optimization workflows across engineering and computational use cases.
+## About Generic Optimization Workflow
 
-## Purpose of the blog
+Generic Optimization Workflow (GOW) is a modular framework for structuring optimization problems as reproducible workflows. It supports configurable parameter spaces, objective-driven evaluation, and scalable execution strategies, including high-throughput and HPC environments.
 
-The purpose of this blog is to provide clear, traceable project communication for contributors and users. Posts will capture release summaries, roadmap changes, architecture decisions, and implementation updates.
+The source code can be found [here](https://github.com/CST-Modelling-Tools/generic-optimization-workflow).
 
-## What readers can expect
+The documentation and usage examples can be found in the main repository.
 
-- New release announcements and changelog highlights
-- Technical notes on architecture and core components
-- Roadmap and planning updates
-- Workflow and tooling improvements
-
-## Invitation to contribute
-
-We welcome contributions through issues, pull requests, and discussions in the project repositories:
-
-- https://github.com/CST-Modelling-Tools/generic-optimization-workflow
-- https://github.com/CST-Modelling-Tools/generic-optimization-workflow-blog
+More content coming soon!
