@@ -127,7 +127,7 @@ const config = {
         { name: 'twitter:card', content: 'summary_large_image' },
       ],
 
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/gow-social-card.jpg',
 
       colorMode: {
         respectPrefersColorScheme: true,
