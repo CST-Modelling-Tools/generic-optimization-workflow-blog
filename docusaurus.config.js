@@ -7,6 +7,8 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+const siteBaseUrl = '/generic-optimization-workflow-blog/';
+const fundingLogoPath = `${siteBaseUrl}img/MICIU_AEI.jpg`;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -21,7 +23,7 @@ const config = {
 
   // Set the production url of your site here
   url: 'https://CST-Modelling-Tools.github.io',
-  baseUrl: '/generic-optimization-workflow-blog/',
+  baseUrl: siteBaseUrl,
   trailingSlash: false,
   organizationName: 'CST-Modelling-Tools',
   projectName: 'generic-optimization-workflow-blog',
@@ -147,7 +149,7 @@ const config = {
                   Grant ATR2024-155003 funded by:
                 </span>
                 <img
-                  src="/generic-optimization-workflow-blog/img/MICIU_AEI.jpg"
+                  src="${fundingLogoPath}"
                   alt="MICIU &amp; AEI logo"
                   class="navbar-funding-center-logo"
                 />
@@ -206,7 +208,7 @@ const config = {
                       Grant ATR2024-155003 funded by:<br/>
                       <img
                         class="funding-logo"
-                        src="/generic-optimization-workflow-blog/img/MICIU_AEI.jpg"
+                        src="${fundingLogoPath}"
                         alt="MICIU + AEI logo"
                       />
                     </p>
@@ -227,15 +229,15 @@ const config = {
       // Requires: GitHub Discussions enabled + Giscus app installed for this repo
       giscus: {
         repo: 'CST-Modelling-Tools/generic-optimization-workflow-blog',
-        repoId: 'R_kgDORTKtXw',
-        category: 'General',
-        categoryId: 'DIC_kwDORTKtX84C2t_a',
+        repoId: 'R_kgDOQCS6Ig',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOQCS6Is4CwrAZ',
         mapping: 'pathname',
         strict: '0',
         reactionsEnabled: '1',
         emitMetadata: '0',
-        inputPosition: 'bottom',
-        theme: 'preferred_color_scheme',
+        inputPosition: 'top',
+        theme: 'light',
         lang: 'en',
       },
 

@@ -151,16 +151,10 @@ p {
   max-width: 350px;
 }
 
-.funding-logos {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-top: 0.4rem;
-}
-
-.funding-logos img {
+.funding-logo {
   height: 100px;
   object-fit: contain;
+  margin-top: 0.4rem;
 }
 
 /* ------------------------- */

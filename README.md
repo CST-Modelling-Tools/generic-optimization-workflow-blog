@@ -16,6 +16,12 @@ Using npm:
 npm install
 ```
 
+For reproducible installs in CI/local validation, use:
+
+```bash
+npm ci
+```
+
 ## Run locally
 
 Using Yarn:
@@ -42,6 +48,14 @@ Using npm:
 
 ```bash
 npm run build
+```
+
+## Health check
+
+Run a full verification pass (build + link/asset/tag consistency checks):
+
+```bash
+npm run check
 ```
 
 ## Deploy to GitHub Pages

@@ -4,7 +4,7 @@ import GiscusComments from '@site/src/components/GiscusComments';
 import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
 
 export default function BlogPostItem(props) {
-  const { metadata, isBlogPostPage } = useBlogPost();
+  const {isBlogPostPage} = useBlogPost();
   
   return (
     <>
