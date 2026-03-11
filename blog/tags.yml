@@ -21,3 +21,7 @@ gow:
 optimization:
   label: Optimization
   description: Objective-driven search, tuning, benchmarking, and evaluation.
+
+scientific-computing:
+  label: Scientific Computing
+  description: Computational science workflows, simulation-driven studies, and reproducible numerical research.

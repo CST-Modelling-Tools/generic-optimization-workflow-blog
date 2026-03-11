@@ -5,6 +5,7 @@ authors: mblanco
 tags: [welcome, gow, optimization, workflows, metaheuristics, hpc]
 description: Introduction to the Generic Optimization Workflow (GOW) Development Blog - documenting advances in workflow-driven optimization and scalable evaluation
 keywords: [generic optimization workflow, GOW, optimization workflows, metaheuristics, HPC, distributed evaluation]
+image: /img/gow-social-card.jpg
 ---
 
 ![GOW logo](/img/gow-logo.png)
