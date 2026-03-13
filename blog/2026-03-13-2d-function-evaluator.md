@@ -8,6 +8,8 @@ keywords: [GOW, optimization algorithms, benchmark functions, rastrigin, rosenbr
 image: /img/gow-social-card.jpg
 ---
 
+!["Animated overview of the benchmark functions included in the 2D Function Evaluator"](/img/benchmark-functions.gif)
+
 # A 2D Benchmark Function Evaluator for the Generic Optimization Workflow
 
 When developing optimization algorithms it is often useful to test them on analytical benchmark functions before applying them to computationally expensive simulation models.
@@ -18,9 +20,7 @@ Within the **Generic Optimization Workflow (GOW)** ecosystem, evaluators provide
 
 To support this, we developed the **2D Function Evaluator**, a small tool designed to evaluate and visualize common two-dimensional benchmark functions. It allows developers to test optimization algorithms used in GOW on well-known analytical problems before applying them to more expensive engineering models.
 
-!["Animated overview of the benchmark functions included in the 2D Function Evaluator"](/img/benchmark-functions.gif)
-
-The animation above shows the benchmark functions currently included in the evaluator, with both contour and 3D surface views.
+The animation at the start of this post shows the benchmark functions currently included in the evaluator, with both contour and 3D surface views.
 
 By making these landscapes directly visible, the evaluator helps bridge the gap between abstract optimization concepts and the practical behavior of algorithms during a run. It provides a lightweight and reproducible environment for studying how optimizers explore, converge, and respond to different classes of objective landscapes.
 
