@@ -10,8 +10,6 @@ image: /img/gow-social-card.jpg
 
 !["Animated overview of the benchmark functions included in the 2D Function Evaluator"](/img/benchmark-functions.gif)
 
-# A 2D Benchmark Function Evaluator for the Generic Optimization Workflow
-
 When developing optimization algorithms it is often useful to test them on analytical benchmark functions before applying them to computationally expensive simulation models.
 
 These functions provide controlled environments where algorithm behavior can be studied, compared, and debugged without the overhead of running full simulations.
@@ -22,7 +20,7 @@ To support this, we developed the **2D Function Evaluator**, a small tool design
 
 The animation at the start of this post shows the benchmark functions currently included in the evaluator, with both contour and 3D surface views.
 
-By making these landscapes directly visible, the evaluator helps bridge the gap between abstract optimization concepts and the practical behavior of algorithms during a run. It provides a lightweight and reproducible environment for studying how optimizers explore, converge, and respond to different classes of objective landscapes.
+By visualizing these benchmark functions as contour maps and 3D surfaces, the 2D-Function Evaluator makes the optimization landscape directly visible. This allows developers to observe how algorithms explore the search space and converge toward optimal solutions.
 
 This post introduces the 2D Function Evaluator, explains how it fits into the GOW architecture, and describes how it can be installed and used to experiment with optimization algorithms in a lightweight and reproducible environment.
 
@@ -34,7 +32,7 @@ For a broader introduction to GOW architecture and evaluator concepts, see the p
 
 ---
 
-# Motivation
+## Motivation
 
 In real optimization workflows, objective evaluations are often the most expensive part of the process. They may involve:
 
@@ -58,7 +56,7 @@ The **2D Function Evaluator** brings this capability directly into the GOW ecosy
 
 ---
 
-# Integration with GOW
+## Integration with GOW
 
 GOW separates three main responsibilities:
 
@@ -88,7 +86,7 @@ This is particularly useful because it allows algorithm development and workflow
 
 ---
 
-# Installation
+## Installation
 
 The 2D Function Evaluator is available as an open-source project on GitHub:
 
@@ -130,7 +128,7 @@ Once built, the evaluator executable and the Python utilities are ready to use.
 
 ---
 
-# Basic Usage
+## Basic Usage
 
 There are two main ways to use the project:
 
@@ -162,7 +160,7 @@ This makes the repository useful not only as an evaluator, but also as a compact
 
 ---
 
-# Benchmark Functions
+## Benchmark Functions
 
 The evaluator currently includes several well-known two-dimensional benchmark functions used in optimization research.
 
@@ -194,7 +192,7 @@ Using the visualization tools included in the repository, these functions can al
 
 ---
 
-# Why Two-Dimensional Benchmarks?
+## Why Two-Dimensional Benchmarks?
 
 Two-dimensional benchmark problems have a unique advantage: **they can be visualized directly**.
 
@@ -220,7 +218,7 @@ This is one of the main reasons why the 2D Function Evaluator is useful during d
 
 ---
 
-# Evaluator Architecture
+## Evaluator Architecture
 
 The project combines two complementary layers:
 
@@ -254,7 +252,7 @@ This separation keeps the evaluator lightweight and efficient while still provid
 
 ---
 
-# Visualization and Analysis
+## Visualization and Analysis
 
 The repository also includes scripts for analyzing optimization runs and visualizing algorithm behavior.
 
@@ -281,7 +279,7 @@ They also make the project especially useful for communication and teaching, sin
 
 ---
 
-# Example Workflow
+## Example Workflow
 
 A typical development workflow using the evaluator might look like this:
 
@@ -305,7 +303,7 @@ This staged process makes it possible to identify algorithmic issues early, befo
 
 ---
 
-# Why This Tool Is Valuable
+## Why This Tool Is Valuable
 
 The 2D Function Evaluator provides several benefits for the GOW ecosystem.
 
@@ -329,7 +327,7 @@ Taken together, these properties make the evaluator useful not only as a benchma
 
 ---
 
-# Availability
+## Availability
 
 The 2D Function Evaluator is available as an open-source project:
 
@@ -345,7 +343,7 @@ And the GOW Development Blog:
 
 ---
 
-# Conclusion
+## Conclusion
 
 The **2D Function Evaluator** provides a simple yet powerful benchmark environment for testing optimization algorithms within the Generic Optimization Workflow.
 

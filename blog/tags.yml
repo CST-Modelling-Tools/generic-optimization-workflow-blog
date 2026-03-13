@@ -25,3 +25,18 @@ optimization:
 scientific-computing:
   label: Scientific Computing
   description: Computational science workflows, simulation-driven studies, and reproducible numerical research.
+
+benchmark:
+  label: Benchmark
+  permalink: /benchmark
+  description: Posts about benchmark problems and benchmark evaluators
+
+algorithms:
+  label: Algorithms
+  permalink: /algorithms
+  description: Posts about optimization algorithms and their development
+
+visualization:
+  label: Visualization
+  permalink: /visualization
+  description: Posts about plots, animations, and visual analysis tools
