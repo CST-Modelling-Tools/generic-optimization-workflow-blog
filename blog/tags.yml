@@ -40,3 +40,27 @@ visualization:
   label: Visualization
   permalink: /visualization
   description: Posts about plots, animations, and visual analysis tools
+
+evaluators:
+  label: Evaluators
+  description: Posts about external evaluators, runtime contracts, and evaluator integration patterns.
+
+windows:
+  label: Windows
+  description: Posts with Windows-specific setup, execution, and troubleshooting guidance.
+
+linux:
+  label: Linux
+  description: Posts with Linux-specific setup, execution, and troubleshooting guidance.
+
+macos:
+  label: macOS
+  description: Posts with macOS-specific setup, execution, and troubleshooting guidance.
+
+installation:
+  label: Installation
+  description: Posts about installing GOW, configuring environments, and preparing runtime dependencies.
+
+fireworks:
+  label: FireWorks
+  description: Posts about the optional FireWorks backend and distributed execution infrastructure.
