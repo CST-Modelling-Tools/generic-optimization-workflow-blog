@@ -18,6 +18,12 @@ GOW is designed to launch **external evaluators**. That flexibility is one of it
 
 The answer depends on how `evaluator.command` is written.
 
+`evaluator.command` is the field in the GOW optimization specification YAML that tells GOW which process to launch for each evaluation. Typical examples are:
+
+- `["{python}", "evaluator.py"]`
+- `["C:/Tools/evaluator/bin/evaluator.exe"]`
+- `["bash", "/abs/path/to/run-evaluator.sh"]`
+
 This post is the canonical reference for:
 
 - where GOW should be installed
@@ -35,9 +41,18 @@ Short answer:
 - Use a **direct executable path** for compiled or self-contained evaluators.
 - Use a **wrapper script** when the evaluator needs activation, module loading, or other setup.
 
+One more point is essential:
+
+- GOW defines the optimization process.
+- The evaluator may also have its own internal configuration, auxiliary files, or workflow specification.
+
 For the underlying execution model, see:
 
 - **[GOW: Architecture, Evaluator Contract, and Provenance](/gow-architecture-and-usage)**
+
+For the structure of the optimization specification itself, see:
+
+- **[Defining and Running an Optimization Problem in GOW](/defining-and-running-an-optimization-problem)**
 
 For package installation and backend selection, see:
 
@@ -70,6 +85,90 @@ In most projects, the clean mental model is:
 
 Those two may be the same, but they do not have to be.
 
+If you have not read the architecture post yet, the important context is:
+
+- the optimization problem is defined in a user-owned YAML specification
+- that specification contains the evaluator section
+- `evaluator.command` inside that section is what determines the evaluator runtime
+
+---
+
+## Two Layers of Configuration
+
+In simple cases, one GOW problem specification is enough. In more complex scientific workflows, there are often **two layers**:
+
+1. the **GOW optimization specification**
+2. the **evaluator's own configuration or workflow specification**
+
+The GOW optimization specification defines what GOW must understand and track, such as:
+
+- the optimization objective
+- the parameters visible to the optimization process
+- how to launch the evaluator
+- runtime settings relevant to orchestration
+
+The evaluator may also need its own files, such as:
+
+- templates
+- meshes
+- lookup tables
+- calibration data
+- workflow YAML files
+- solver-chain configuration
+- post-processing rules
+
+That second layer belongs to the evaluator, not to GOW.
+
+GOW does **not** require every evaluator input to be flattened into `input.json`.
+
+---
+
+## What Should Go Into `input.json`?
+
+`input.json` should contain the information GOW hands to the evaluator as part of the tracked evaluation state.
+
+This usually includes:
+
+- candidate-specific parameter values
+- fixed problem settings that should be tracked as part of the optimization state
+- run and candidate identifiers
+- small pieces of metadata that should travel with the evaluation
+
+Other evaluator inputs may live outside `input.json`. That is often the better choice for:
+
+- large datasets
+- structured workflow descriptions
+- domain-specific templates
+- files consumed by multiple tools inside the evaluator
+- internal evaluator configuration that GOW does not need to interpret
+
+There is no universal rule that cleanly separates “parameter,” “metadata,” and “auxiliary input” for every workflow. The practical rule is simpler:
+
+- if GOW should track it as part of the problem or candidate state, keep it GOW-visible
+- if it is evaluator-internal or too domain-specific for GOW to model, keep it in evaluator-owned files
+
+---
+
+## Where Should Evaluator Data Live?
+
+Static evaluator inputs should normally live in the **user workspace**, not inside the GOW installation and not inside the Python environment.
+
+Typical examples:
+
+- reference datasets
+- templates
+- geometry files
+- model inputs
+- evaluator workflow YAML files
+
+Per-evaluation generated files belong in GOW's run/output directories. Static evaluator assets belong in problem-specific directories that the evaluator can read.
+
+In other words:
+
+- GOW installation: GOW itself
+- user workspace: problem definitions and evaluator-owned static inputs
+- run output directories: candidate-specific generated artifacts
+
 ---
 
 ## Which Environment Is Used During a Run?
@@ -91,12 +190,12 @@ So the practical rule is:
 
 This is why `evaluator.command` is the key decision point.
 
+It is also why complex evaluators often use wrappers or entry-point scripts: the command may need to bootstrap a workflow that reads its own configuration files in addition to GOW's `input.json`.
+
 ---
 
 ## Decision Table
 
-| Situation | Recommended setup | `evaluator.command` pattern | Why |
-|---|---|---|---|
 | Situation | Recommended setup | `evaluator.command` pattern | Why |
 |---|---|---|---|
 | Small Python evaluator, dependencies already match GOW | Share GOW's environment | `["{python}", "evaluator.py"]` | Smallest and clearest setup |
@@ -199,6 +298,8 @@ Use this when:
 
 Absolute paths are preferable for reproducibility.
 
+This is also a good pattern when the executable reads auxiliary files from a problem-specific workspace.
+
 ### 3. Use a Wrapper Script When Setup Is Part of the Runtime
 
 Use a wrapper when the evaluator needs setup that should happen every time it runs, such as:
@@ -234,6 +335,21 @@ evaluator:
 Wrapper scripts are the best option when environment activation is necessary. They keep the logic explicit and out of the YAML file.
 
 Do not try to encode multi-step shell logic directly in the YAML command list. Put it in the wrapper.
+
+They are also the best option when the evaluator is itself a workflow driver that needs to read an evaluator-specific YAML or similar configuration file.
+
+Example:
+
+```yaml
+evaluator:
+  command: ["bash", "/abs/path/to/run-evaluator.sh"]
+```
+
+Inside `run-evaluator.sh`, the evaluator can invoke its own workflow definition, for example:
+
+```bash
+/opt/evaluator/bin/driver --spec /abs/path/to/problem/evaluator.yaml
+```
 
 ---
 

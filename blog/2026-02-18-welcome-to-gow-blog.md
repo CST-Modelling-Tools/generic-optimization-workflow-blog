@@ -21,6 +21,7 @@ This blog documents the ongoing development of the **Generic Optimization Workfl
 The blog now has separate posts for the main pieces of the system:
 
 - **[GOW: Architecture, Evaluator Contract, and Provenance](/gow-architecture-and-usage)**
+- **[Defining and Running an Optimization Problem in GOW](/defining-and-running-an-optimization-problem)**
 - **[Running GOW with External Evaluators on Windows, Linux, and macOS](/running-gow-with-external-evaluators)**
 - **[Installing GOW and Choosing a Backend](/gow-installation-and-backends)**
 - **[A 2D Benchmark Function Evaluator for the Generic Optimization Workflow](/2d-function-evaluator)**
@@ -28,9 +29,10 @@ The blog now has separate posts for the main pieces of the system:
 Recommended reading order:
 
 1. **[GOW: Architecture, Evaluator Contract, and Provenance](/gow-architecture-and-usage)**
-2. **[Running GOW with External Evaluators on Windows, Linux, and macOS](/running-gow-with-external-evaluators)**
-3. **[A 2D Benchmark Function Evaluator for the Generic Optimization Workflow](/2d-function-evaluator)**
-4. **[Installing GOW and Choosing a Backend](/gow-installation-and-backends)**
+2. **[Defining and Running an Optimization Problem in GOW](/defining-and-running-an-optimization-problem)**
+3. **[Running GOW with External Evaluators on Windows, Linux, and macOS](/running-gow-with-external-evaluators)**
+4. **[A 2D Benchmark Function Evaluator for the Generic Optimization Workflow](/2d-function-evaluator)**
+5. **[Installing GOW and Choosing a Backend](/gow-installation-and-backends)**
 
 The goal is to keep each topic focused:
 

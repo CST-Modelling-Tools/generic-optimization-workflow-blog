@@ -65,6 +65,38 @@ If you want to use the optional FireWorks backend:
 pip install .[fireworks]
 ```
 
+After installation, the `gow` CLI is available through the Python environment where GOW was installed. In normal usage, this means that the environment should be active before commands such as `gow run` or `gow evaluate` are used.
+
+---
+
+## Activating the GOW Environment
+
+To ensure that the Python environment containing GOW is active, activate the same environment where GOW was installed.
+
+Typical examples:
+
+These examples assume that the current directory contains the `.venv` folder. If the environment is stored elsewhere, use the correct relative path or an absolute path to that environment.
+
+- Linux or macOS:
+
+```bash
+source .venv/bin/activate
+```
+
+- Windows PowerShell:
+
+```powershell
+.venv\Scripts\Activate.ps1
+```
+
+After activation, verify that the CLI is available:
+
+```bash
+gow --help
+```
+
+If this command works, the GOW environment is active and the `gow` CLI is available in the current shell session.
+
 ---
 
 ## Backend Choice

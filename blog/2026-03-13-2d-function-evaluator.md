@@ -48,6 +48,8 @@ Repository:
 
 The executable is the runtime target for GOW. The Python utilities are for plotting, extracting histories, and generating benchmark visualizations.
 
+This example is intentionally simple. The evaluator is a single executable and does not require a separate evaluator workflow specification. More complex scientific evaluators may need their own YAML or other auxiliary files in addition to GOW's problem specification.
+
 ---
 
 ## Build the Evaluator
@@ -124,6 +126,10 @@ To use the evaluator with GOW, define a problem specification that includes:
 - one fixed parameter, `function`
 - an evaluator command that points to the built executable
 
+That is enough for this benchmark evaluator. More complex evaluators may need additional evaluator-owned files and their own internal workflow configuration. Those belong to the evaluator layer described in:
+
+- **[Running GOW with External Evaluators on Windows, Linux, and macOS](/running-gow-with-external-evaluators)**
+
 Example:
 
 ```yaml
@@ -176,6 +182,10 @@ Once the specification is in place, start an optimization run with:
 ```bash
 gow run path/to/optimization_specs.yaml
 ```
+
+For the full structure of `optimization_specs.yaml` and the CLI prerequisites for invoking `gow`, see:
+
+- **[Defining and Running an Optimization Problem in GOW](/defining-and-running-an-optimization-problem)**
 
 For one-off debugging of a specific candidate, use:
 

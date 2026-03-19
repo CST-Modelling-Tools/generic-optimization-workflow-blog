@@ -20,12 +20,14 @@ This post is the canonical reference for:
 
 - the GOW architecture
 - the evaluator contract
+- the optimization problem specification
 - identifiers and experiment hierarchy
 - filesystem provenance
 - the failure model
 
 For environment setup and platform-specific evaluator execution, see:
 
+- **[Defining and Running an Optimization Problem in GOW](/defining-and-running-an-optimization-problem)**
 - **[Running GOW with External Evaluators on Windows, Linux, and macOS](/running-gow-with-external-evaluators)**
 - **[Installing GOW and Choosing a Backend](/gow-installation-and-backends)**
 
@@ -60,6 +62,32 @@ As a result, the same workflow model can drive simple Python scripts, compiled e
 
 ---
 
+## User Workspace and Problem Specification
+
+GOW runs optimization problems from a **user workspace**, not from the GOW installation directory and not from the evaluator installation directory.
+
+In practice, a user defines or selects a problem in a workspace folder that contains the files needed to describe and run that optimization study. The central file is the **optimization specification YAML file**, often named something like:
+
+```text
+optimization_specs.yaml
+```
+
+The filename is not the important part. What matters is that the file defines the optimization problem and that GOW is invoked with its path.
+
+Conceptually, the workspace is user-owned. It is where the optimization problem lives. GOW provides the orchestration layer, and the evaluator may also read files from that workspace or from evaluator-specific locations.
+
+The optimization specification defines the problem as GOW sees it. The exact runtime behavior of the evaluator is controlled through the evaluator configuration inside that specification, especially the `evaluator.command` field.
+
+For the full optimization-specification structure and CLI usage, continue with:
+
+- **[Defining and Running an Optimization Problem in GOW](/defining-and-running-an-optimization-problem)**
+
+For the runtime and platform-specific meaning of `evaluator.command`, continue with:
+
+- **[Running GOW with External Evaluators on Windows, Linux, and macOS](/running-gow-with-external-evaluators)**
+
+---
+
 ## The Evaluator Contract
 
 GOW interacts with evaluators through a file-based contract. For each candidate evaluation, GOW creates a working directory and expects the evaluator to follow three steps:
@@ -83,6 +111,18 @@ flowchart LR
 ```
 
 This design keeps evaluators independent from GOW while allowing GOW to manage execution, record outputs, and classify failures.
+
+### What GOW Manages vs What the Evaluator Owns
+
+The GOW contract is intentionally small. GOW provides candidate-facing input and execution context. The evaluator may require additional files, templates, datasets, or even its own workflow specification.
+
+So `input.json` should not be read as “the evaluator must receive all of its information through this one file.” Instead:
+
+- GOW manages the candidate-specific handoff it needs to track and reproduce
+- the evaluator may also read auxiliary files that GOW does not interpret
+- complex evaluators may have their own internal configuration or workflow specification
+
+This flexibility is part of the design. GOW tracks the optimization process. The evaluator owns the domain-specific evaluation logic.
 
 ### Input File
 
@@ -314,5 +354,6 @@ GOW provides a workflow layer around optimization rather than another optimizer 
 
 For runtime setup and backend selection, continue with:
 
+- **[Defining and Running an Optimization Problem in GOW](/defining-and-running-an-optimization-problem)**
 - **[Running GOW with External Evaluators on Windows, Linux, and macOS](/running-gow-with-external-evaluators)**
 - **[Installing GOW and Choosing a Backend](/gow-installation-and-backends)**
